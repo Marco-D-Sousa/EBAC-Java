@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package anotacao;
 
 import java.lang.annotation.Documented;
@@ -6,10 +9,16 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * @author rodrigo.pires
+ *
+ */
 @Documented
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Tabela {
+public @interface ColunaTabela {
 
-    String value();
+	String dbName();
+	
+	String setJavaName();
 }
