@@ -1,79 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+
+    <!-- Persistence Unit para PostgreSQL -->
     <persistence-unit name="postgres1">
 
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-
-        <class>marco.task-36.domain.ClienteJpa</class>
-        <class>marco.task-36.domain.ProdutoJpa</class>
-        <class>marco.task-36.domain.VendaJpa</class>
-        <class>marco.task-36.domain.ProdutoQuantidadeJpa</class>
-
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>domain.ClienteJpa</class>
+        <class>domain.ProdutoJpa</class>
+        <class>domain.VendaJpa</class>
+        <class>domain.ProdutoQuantidadeJpa</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vendas_online" /> <!-- BD Mane -->
-            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="admin" /> <!-- DB Password -->
-
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
-            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
-
-            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
-            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vendas_online"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="admin"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
 
     </persistence-unit>
 
     <persistence-unit name="postgres2">
 
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-
-        <class>marco.task-36.domain.ClienteJpa</class>
-        <class>marco.task-36.domain.ProdutoJpa</class>
-        <class>marco.task-36.domain.VendaJpa</class>
-        <class>marco.task-36.domain.ProdutoQuantidadeJpa</class>
-
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>domain.ClienteJpa</class>
+        <class>domain.ProdutoJpa</class>
+        <class>domain.VendaJpa</class>
+        <class>domain.ProdutoQuantidadeJpa</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vendas_online_2" /> <!-- BD Mane -->
-            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="admin" /> <!-- DB Password -->
-
-            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
-            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
-
-            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
-            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vendas_online_2"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="admin"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
 
     </persistence-unit>
 
+    <!-- Persistence Unit para MySQL -->
     <persistence-unit name="mysql1">
 
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-
-        <class>br.com.rpires.domain.jpa.ClienteJpa2</class>
-
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>domain.ClienteJpa2</class>
+        <class>domain.ProdutoJpa</class>
+        <class>domain.VendaJpa</class>
+        <class>domain.ProdutoQuantidadeJpa</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/vendas_online" /> <!-- BD Mane -->
-            <property name="javax.persistence.jdbc.user" value="admin" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="admin" /> <!-- DB Password -->
-
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/> <!-- DB Dialect -->
-            <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
-
-            <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
-            <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/vendas_online_mysql"/>
+            <property name="jakarta.persistence.jdbc.user" value="admin"/>
+            <property name="jakarta.persistence.jdbc.password" value="admin"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
 
     </persistence-unit>
