@@ -40,12 +40,6 @@ public class VendaJpa implements Persistente {
 	)
 	private ClienteJpa cliente;
 
-	/*
-	 * OBS: Não é uma boa prática utiliar FetchType.EAGER pois ele sempre irá trazer todos os objetos da collection
-	 * mesmo sem precisar utilizar. Fazer um método específico para buscar tudo e utilizar quando precisar
-	 *
-	 * @see IVendaJpaDAO consultarComCollection
-	 */
 	@OneToMany(mappedBy = "venda", cascade = CascadeType.ALL/*, fetch = FetchType.EAGER*/)
 	private Set<ProdutoQuantidadeJpa> produtos;
 
@@ -121,7 +115,6 @@ public class VendaJpa implements Persistente {
 				produtos.remove(op.get());
 				recalcularValorTotalVenda();
 			}
-
 		}
 	}
 

@@ -86,5 +86,4 @@ public class ProdutoQuantidadeJpa {
 		BigDecimal novoValor = this.produto.getValor().multiply(BigDecimal.valueOf(quantidade));
 		this.valorTotal = this.valorTotal.subtract(novoValor);
 	}
-
 }
